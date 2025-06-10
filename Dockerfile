@@ -3,7 +3,7 @@
 # ---------------------------------------------------------------------------- #
 
 ARG UBUNTU_VERSION=24.04
-FROM --platform=linux/amd64 ubuntu:${UBUNTU_VERSION}
+FROM ubuntu:${UBUNTU_VERSION}
 
 # ---------------------------------------------------------------------------- #
 #                      CONTAINER ARGUMENTS AND ENV CONFIG                      #
@@ -25,7 +25,7 @@ ENV ENERGYPLUS_DOWNLOAD_BASE_URL https://github.com/NREL/EnergyPlus/releases/dow
 ENV ENERGYPLUS_DOWNLOAD_FILENAME EnergyPlus-$ENERGYPLUS_VERSION-$ENERGYPLUS_SHA-Linux-Ubuntu22.04-x86_64.sh 
 ENV ENERGYPLUS_DOWNLOAD_URL $ENERGYPLUS_DOWNLOAD_BASE_URL/$ENERGYPLUS_DOWNLOAD_FILENAME
 # Python add pyenergyplus path in order to detect API package
-ENV PYTHONPATH="/usr/local/EnergyPlus-${ENERGYPLUS_INSTALL_VERSION}"
+ENV PYTHONPATH=/usr/local/EnergyPlus-${ENERGYPLUS_INSTALL_VERSION}
 
 # ---------------------------------- PYTHON ---------------------------------- #
 
